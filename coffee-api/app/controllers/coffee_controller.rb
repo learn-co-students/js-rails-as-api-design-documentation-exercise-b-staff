@@ -8,7 +8,7 @@ class CoffeeController < ApplicationController
         filtered = all.select { |coffee| coffee.origin.include? origin_filter }
         chunks = filtered.each_slice(limit).to_a
         coffees = chunks[page]
-        
+        # byebug
         render json: coffees
     end
 end
